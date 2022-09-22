@@ -1,17 +1,40 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import App from './Material/App';
+import * as serviceWorker from './serviceWorker';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { I18nextProvider } from 'react-i18next';
+import i18next from 'i18next';
+// import { BrowserRouter } from 'react-router-dom';
+import common_vn from "../src/Material/lang/vn";
+import common_en from "../src/Material/lang/en";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+i18next.init({
+  interpolation: { escapeValue: false },  // React already does escaping
+  lng: 'en',                              // language to use
+  resources: {
+    en: {
+      common: common_en               // 'common' is our custom namespace
+    },
+    vn: {
+      common: common_vn
+    },
+  },
+});
+
+ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    {/* <BrowserRouter> */}
+      <I18nextProvider i18n={i18next}>
+        <App />
+      </I18nextProvider>
+    {/* </BrowserRouter> */}
+  </React.StrictMode >,
+  document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();
