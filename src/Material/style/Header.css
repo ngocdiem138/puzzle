@@ -1,0 +1,51 @@
+.content {
+    padding: 10px 0 10px 0;
+    border-bottom: 1px solid gainsboro;
+  }
+  
+  .name {
+    margin-top: 25px;
+    font-size: x-large;
+    width: 100vh;
+    font-weight: 700;
+    color: #666666;
+  }
+  
+  .logo {
+    margin-top: 10px;
+    margin-left: 10px;
+    align-content: center;
+    width: 2vw;
+  }
+  
+  .lang {
+    margin-top: 25px;
+    font-size: 2vh;
+    width: 100vh;
+  }
+  
+  .lang button {
+    margin-top: 4px;
+    font-size: 1vw;
+    border: none;
+    background-color: white;
+  }
+  
+  .lang button:focus {
+    color: #2196F3;
+  }
+  .line{
+    color: #2196F3;
+  }
+  
+  .help,
+  .logout {
+    margin-top: 29px;
+    width: 100vh;
+    font-size: 20px;
+  }
+  
+  .col {
+    padding: 0 !important;
+  }
+  
